@@ -1,13 +1,18 @@
 import React from 'react';
-import { Layout, Row, Col, Typography, theme } from 'antd';
+import { Layout, Row, Col, Typography, Divider, ConfigProvider, theme } from 'antd';
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph, Text, Link } = Typography;
 import { StaticImage } from "gatsby-plugin-image"
+import { FilterableAccomplishments } from '../components/FilterableAccomplishments';
 import '../styles/index.css'
+import { mirandaConfig } from '../styles/mirandaConfig';
 
 const Home = () => {
   return (
-    <Layout className="layout">
+    <ConfigProvider
+        theme={mirandaConfig}
+      >
+      <Layout className="layout" style={{backgroundColor:'#FFFCFA'}}>
       <Content style={{width:'75%', margin: 'auto', paddingTop: '2rem'}}>
         <Row gutter={24} justify="space-around" align="middle">
             <Col span={16}>
@@ -38,8 +43,10 @@ const Home = () => {
                 />
             </Col>
         </Row>
+        <Divider dashed />
+        <Row><FilterableAccomplishments/></Row>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
+      <Footer style={{ textAlign: 'center', backgroundColor:"#FFFCFA" }}>
         I made this website myself using Gatsby, React, Ant Design, and TypeScript.
         Anyways, if you've come all this way, you may as well say hello... (☞ﾟヮﾟ)☞ &nbsp;
         <Link href='https://www.linkedin.com/in/miranda-li-b83859124/'>Linkedin</Link>
@@ -47,6 +54,8 @@ const Home = () => {
         <Link href='mailto:mirandal@stanford.edu'>Email</Link>
         </Footer>
     </Layout>
+    </ConfigProvider>
+    
   );
 }
 
