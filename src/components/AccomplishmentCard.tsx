@@ -1,30 +1,10 @@
 import React, { useState } from 'react';
-import { ConfigProvider, Card, Avatar, Tag, Tooltip, Button, Modal } from 'antd';
-import { mirandaConfig } from '../styles/mirandaConfig';
-import { tagText, tagColors } from "./tagProperties"
+import { Card, Avatar, Tag, Tooltip, Button, Modal } from 'antd';
+import {  tagText, tagColors } from "./tagProperties"
+import { AccomplishmentType } from '../data/accomplishments';
 
-export const AccomplishmentCard = ({
-    title, 
-    description, 
-    start,
-    end,
-    tags,
-    role,
-    image,
-    avatar,
-    moreInfo
-} : {
-    title: React.ReactNode | string,
-    description: React.ReactNode | string,
-    start: string,
-    end: string,
-    tags: string[],
-    role?: string,
-    image?: React.ReactNode,
-    avatar?: React.ReactNode,
-    moreInfo?: React.ReactNode,
-}
-) => {
+export const AccomplishmentCard = ({ accomplishment } : { accomplishment: AccomplishmentType }) => {
+    const { title, description, start, end, tags, role, image, avatar, moreInfo } = accomplishment
     const [modalOpen, setModalOpen] = useState(false);
     const showModal = () => { setModalOpen(true) }
     const hideModal = () => { setModalOpen(false) }
@@ -32,12 +12,11 @@ export const AccomplishmentCard = ({
     <>
         <p style={{color: '#444444'}}>{role}</p>
         <p style={end.toLowerCase() === 'present' ? {color:'#558564'} : {color:'#8377D1'}}>{start} → {end}</p>
-        <p>{description}</p>
+        {typeof(description) === 'string' ? <p>{description}</p> : description}
     </>
     )
 
-    return (
-        <ConfigProvider theme={mirandaConfig}>
+    return (<>
         <Card
             hoverable
             style={{ width: '100%' }}
@@ -55,8 +34,8 @@ export const AccomplishmentCard = ({
             <>
                 <Card.Grid hoverable={false} style={{width:'60%'}}>
                     {
-                        tags.map((tag) => {
-                            return <AccomplishmentTag category={tag}/>
+                        tags.map((tag, tagIdx) => {
+                            return <AccomplishmentTag key={tagIdx} category={tag}/>
                         })
                     }
                 </Card.Grid>
@@ -68,8 +47,8 @@ export const AccomplishmentCard = ({
              <>
                 <Card.Grid hoverable={false} style={{width:'100%'}}>
                     {
-                        tags.map((tag) => {
-                            return <AccomplishmentTag category={tag}/>
+                        tags.map((tag, tagIdx) => {
+                            return <AccomplishmentTag key={tagIdx} category={tag}/>
                         })
                     }
                 </Card.Grid>
@@ -78,7 +57,7 @@ export const AccomplishmentCard = ({
         </Card>
         
         <Modal 
-        visible={modalOpen} 
+        open={modalOpen} 
         footer={null} 
         closable={true} 
         maskClosable={true}
@@ -86,8 +65,7 @@ export const AccomplishmentCard = ({
         >
             {moreInfo}
         </Modal>
-
-        </ConfigProvider>
+        </>
     )
 }
 

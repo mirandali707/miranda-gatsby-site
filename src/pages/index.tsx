@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout, Row, Col, Typography, Divider, ConfigProvider, theme } from 'antd';
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph, Text, Link } = Typography;
 import { StaticImage } from "gatsby-plugin-image"
+import { TagFilterSelect } from '../components/TagFilterSelect';
 import { FilterableAccomplishments } from '../components/FilterableAccomplishments';
 import '../styles/index.css'
 import { mirandaConfig } from '../styles/mirandaConfig';
+import { accomplishments, AccomplishmentType } from '../data/accomplishments';
 
 const Home = () => {
+  const [activeTags, setActiveTags] = useState(accomplishments)
+
   return (
     <ConfigProvider
         theme={mirandaConfig}
@@ -44,7 +48,8 @@ const Home = () => {
             </Col>
         </Row>
         <Divider dashed />
-        <Row><FilterableAccomplishments/></Row>
+        <Row><TagFilterSelect/></Row>
+        <Row><FilterableAccomplishments activeTags={activeTags}/></Row>
       </Content>
       <Footer style={{ textAlign: 'center', backgroundColor:"#FFFCFA" }}>
         I made this website myself using Gatsby, React, Ant Design, and TypeScript.

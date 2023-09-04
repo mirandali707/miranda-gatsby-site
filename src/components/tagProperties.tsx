@@ -10,7 +10,7 @@ export enum tagColors {
     'leadership' = 'orange'
 }
 
-export const allTags = Object.keys(tagColors)
+export const tagInfo = Object.keys(tagColors)
         .map((value)=> {
             return {
                 label : value,
