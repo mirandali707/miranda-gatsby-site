@@ -24,7 +24,7 @@ const Home = () => {
             <Col span={16}>
                 <Title>Hi, I'm Miranda ₊ ⊹ ⟡</Title>
                 <Paragraph>
-                    I'm a student at Stanford studying computer science (BS + MS).
+                    I'm a student at Stanford studying computer science (B.S. '23, M.S. '24).
                     I like making human-centered technology, joyful and accessible learning tools and curricula, and art.
                 </Paragraph>
                 <Paragraph>
@@ -33,8 +33,6 @@ const Home = () => {
                 <Link href='mailto:mirandal@stanford.edu'>Email</Link>
                 &nbsp;⟡&nbsp;
                 <Link href='https://github.com/mirandali707'>Github</Link>
-                &nbsp;⟡&nbsp;
-                <Link href=''>Resume</Link>
                 </Paragraph>
             </Col>
             <Col span={8}>
