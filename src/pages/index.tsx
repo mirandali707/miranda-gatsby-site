@@ -7,10 +7,9 @@ import { TagFilterSelect } from '../components/TagFilterSelect';
 import { FilterableAccomplishments } from '../components/FilterableAccomplishments';
 import '../styles/index.css'
 import { mirandaConfig } from '../styles/mirandaConfig';
-import { accomplishments, AccomplishmentType } from '../data/accomplishments';
 
 const Home = () => {
-  const [activeTags, setActiveTags] = useState(accomplishments)
+  const [activeTags, setActiveTags] = useState('')
 
   return (
     <ConfigProvider

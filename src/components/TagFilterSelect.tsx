@@ -1,7 +1,7 @@
 import React from 'react';
-import { Select, Tag } from 'antd';
+import { Select, Tag, Tooltip } from 'antd';
 import type { CustomTagProps } from 'rc-select/lib/BaseSelect';
-import { tagInfo } from './tagProperties'
+import { tagProperties, tagInfo } from './tagProperties'
 
 const tagRender = (props: CustomTagProps) => {
     const { label, value, closable, onClose } = props;
@@ -10,6 +10,8 @@ const tagRender = (props: CustomTagProps) => {
       event.stopPropagation();
     };
     return (
+    // TODO: add tooltips?
+    // <Tooltip placement="top" title={tagProperties[label].text}>
       <Tag
         color={value}
         onMouseDown={onPreventMouseDown}
@@ -19,10 +21,11 @@ const tagRender = (props: CustomTagProps) => {
       >
         {label}
       </Tag>
+    //   </Tooltip>
     );
   };
 
-export const TagFilterSelect = () => {
+export const TagFilterSelect = () => {    
     return <Select
     mode="multiple"
     tagRender={tagRender}

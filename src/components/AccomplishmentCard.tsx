@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Avatar, Tag, Tooltip, Button, Modal } from 'antd';
-import {  tagText, tagColors } from "./tagProperties"
+import {  tagProperties } from "./tagProperties"
 import { AccomplishmentType } from '../data/accomplishments';
 
 export const AccomplishmentCard = ({ accomplishment } : { accomplishment: AccomplishmentType }) => {
@@ -69,9 +69,9 @@ export const AccomplishmentCard = ({ accomplishment } : { accomplishment: Accomp
     )
 }
 
-const AccomplishmentTag = ({category}) => {
+const AccomplishmentTag = ({ category } : { category : string}) => {
     return (
-    <Tooltip placement="top" title={tagText[category]}>
-        <Tag color={tagColors[category]}>{category}</Tag>
+    <Tooltip placement="top" title={tagProperties[category].text}>
+        <Tag color={tagProperties[category].color}>{category}</Tag>
     </Tooltip>)
 }
