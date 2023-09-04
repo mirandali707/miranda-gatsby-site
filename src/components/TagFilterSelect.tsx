@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select, Tag, Tooltip } from 'antd';
 import type { CustomTagProps } from 'rc-select/lib/BaseSelect';
-import { tagProperties } from './tagProperties'
+import { tagProperties } from '../data/tagProperties'
 
 export const TagFilterSelect = ({ setActiveTags }) => {    
   const tagInfo = Object.keys(tagProperties)

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Avatar, Tag, Tooltip, Button, Modal } from 'antd';
-import {  tagProperties } from "./tagProperties"
+import {  tagProperties } from "../data/tagProperties"
 import { AccomplishmentType } from '../data/accomplishments';
 
 export const AccomplishmentCard = ({ accomplishment } : { accomplishment: AccomplishmentType }) => {
