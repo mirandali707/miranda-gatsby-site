@@ -8,9 +8,11 @@ import { FilterableAccomplishments } from '../components/FilterableAccomplishmen
 import '../styles/index.css'
 import { mirandaConfig } from '../styles/mirandaConfig';
 import { tagProperties } from '../data/tagProperties';
+import { AnyOrAllToggle } from '../components/AnyOrAllToggle';
 
 const Home = () => {
   const [activeTags, setActiveTags] = useState(Object.keys(tagProperties))
+  const [anyOrAll, setAnyOrAll] = useState('any')
 
   return (
     <ConfigProvider
@@ -48,8 +50,11 @@ const Home = () => {
             </Col>
         </Row>
         <Divider dashed />
-        <Row><TagFilterSelect setActiveTags={setActiveTags}/></Row>
-        <Row><FilterableAccomplishments activeTags={activeTags}/></Row>
+        <Row>
+          <TagFilterSelect setActiveTags={setActiveTags}/>
+          <AnyOrAllToggle anyOrAll={anyOrAll} setAnyOrAll={setAnyOrAll}/>
+        </Row>
+        <Row><FilterableAccomplishments activeTags={activeTags} anyOrAll={anyOrAll}/></Row>
       </Content>
       <Footer style={{ textAlign: 'center', backgroundColor:"#FFFCFA" }}>
         I made this website myself using Gatsby, React, Ant Design, and TypeScript.
