@@ -7,15 +7,14 @@ export const FilterableAccomplishments = ( { activeTags, anyOrAll }) => {
     const columns : AccomplishmentType[][] = [[], [], []];  // 3 columns
     const _ = require('lodash')
 
-    const anyOverlap = (arrA, arrB) => {
-        // if the intersection between the two arrays' elements is empty, they do NOT have any overlap,
-        // so we return NOT (the intersection between these two arrays' elements is empty)
-        return !_.isEmpty(_.intersection(arrA, arrB))
+    const anyOverlap = (accomplishmentTags, activeTags) => {
+        // returns true if any of the active tags are present in the accomplishment's tags
+        return !_.isEmpty(_.intersection(accomplishmentTags, activeTags))
     }
 
-    const allOverlap = (arrA, arrB) => {
-        // if all of the elements in arrA and arrB overlap, then their XOR is the empty set
-        return _.isEmpty(_.xor(arrA, arrB))
+    const allOverlap = (accomplishmentTags, activeTags) => {
+        // returns true if all active tags are present in the accomplishment's tags
+        return (_.intersection(accomplishmentTags, activeTags)).length == activeTags.length
     }
 
 
@@ -56,10 +55,3 @@ export const FilterableAccomplishments = ( { activeTags, anyOrAll }) => {
     </>      
     )
 }
-
-// const hasIntersection = (arrA: string[], arrB : string[]) => {
-//     const a = new Set(arrA)
-//     const b = new Set(arrB)
-//     let a_intersect_b = new Set([...a].filter(x => b.has(x))); 
-//     return a_intersect_b.size !== 0
-// }
