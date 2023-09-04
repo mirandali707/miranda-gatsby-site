@@ -1,7 +1,30 @@
 import React from 'react';
 import { Select, Tag, Tooltip } from 'antd';
 import type { CustomTagProps } from 'rc-select/lib/BaseSelect';
-import { tagProperties, tagInfo } from './tagProperties'
+import { tagProperties } from './tagProperties'
+
+export const TagFilterSelect = ({setActiveTags}) => {    
+  const tagInfo = Object.keys(tagProperties)
+  .map((tag)=> {
+      return {
+          label : tag,
+          value: tag
+      }
+  })
+
+  return <Select
+  mode="multiple"
+  tagRender={tagRender}
+  defaultValue={tagInfo}
+  style={{ width: '100%' }}
+  options={tagInfo}
+  onChange={(newActiveTags) => {
+    // TODO: debug
+    console.log([...newActiveTags])
+    setActiveTags([...newActiveTags])
+  }}
+/>
+}
 
 const tagRender = (props: CustomTagProps) => {
     const { label, value, closable, onClose } = props;
@@ -10,10 +33,9 @@ const tagRender = (props: CustomTagProps) => {
       event.stopPropagation();
     };
     return (
-    // TODO: add tooltips?
-    // <Tooltip placement="top" title={tagProperties[label].text}>
+    <Tooltip placement="top" title={tagProperties[value].text}>
       <Tag
-        color={value}
+        color={tagProperties[value].color}
         onMouseDown={onPreventMouseDown}
         closable={closable}
         onClose={onClose}
@@ -21,16 +43,6 @@ const tagRender = (props: CustomTagProps) => {
       >
         {label}
       </Tag>
-    //   </Tooltip>
+    </Tooltip>
     );
   };
-
-export const TagFilterSelect = () => {    
-    return <Select
-    mode="multiple"
-    tagRender={tagRender}
-    defaultValue={tagInfo}
-    style={{ width: '100%' }}
-    options={tagInfo}
-  />
-}

@@ -48,7 +48,7 @@ const Home = () => {
             </Col>
         </Row>
         <Divider dashed />
-        <Row><TagFilterSelect/></Row>
+        <Row><TagFilterSelect setActiveTags={setActiveTags}/></Row>
         <Row><FilterableAccomplishments activeTags={activeTags}/></Row>
       </Content>
       <Footer style={{ textAlign: 'center', backgroundColor:"#FFFCFA" }}>

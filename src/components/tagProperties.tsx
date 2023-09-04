@@ -36,13 +36,3 @@ export const tagProperties = {
         text: 'I lead a team'
     },
 }
-
-
-// for rendering tags in the antd multi select easily
-export const tagInfo = Object.keys(tagProperties)
-        .map((tag)=> {
-            return {
-                label : tag,
-                value: tagProperties[tag].color
-            }
-        })
