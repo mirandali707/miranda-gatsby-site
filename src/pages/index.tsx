@@ -50,9 +50,9 @@ const Home = () => {
             </Col>
         </Row>
         <Divider dashed />
-        <Row>
-          <TagFilterSelect setActiveTags={setActiveTags}/>
-          <AnyOrAllToggle anyOrAll={anyOrAll} setAnyOrAll={setAnyOrAll}/>
+        <Row gutter={8}>
+          <Col flex="auto"><TagFilterSelect setActiveTags={setActiveTags}/></Col>
+          <Col><AnyOrAllToggle anyOrAll={anyOrAll} setAnyOrAll={setAnyOrAll}/></Col>
         </Row>
         <Row><FilterableAccomplishments activeTags={activeTags} anyOrAll={anyOrAll}/></Row>
       </Content>
