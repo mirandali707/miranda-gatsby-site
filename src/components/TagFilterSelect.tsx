@@ -14,16 +14,12 @@ export const TagFilterSelect = ({ setActiveTags }) => {
 
   return <Select
   mode="multiple"
+  allowClear={true}
   tagRender={tagRender}
   defaultValue={tagInfo}
   style={{ width: '100%', marginBottom: '1rem' }}
   options={tagInfo}
   onChange={(newActiveTags) => {
-    // TODO: debug
-    console.log([...newActiveTags])
-    // this works...
-    // setActiveTags(['leadership'])
-    // this doesn't ...
     setActiveTags([...newActiveTags])
   }}
 />
