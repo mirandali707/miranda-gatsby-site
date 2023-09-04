@@ -3,7 +3,7 @@ import { Select, Tag, Tooltip } from 'antd';
 import type { CustomTagProps } from 'rc-select/lib/BaseSelect';
 import { tagProperties } from './tagProperties'
 
-export const TagFilterSelect = ({setActiveTags}) => {    
+export const TagFilterSelect = ({ setActiveTags }) => {    
   const tagInfo = Object.keys(tagProperties)
   .map((tag)=> {
       return {
@@ -16,11 +16,14 @@ export const TagFilterSelect = ({setActiveTags}) => {
   mode="multiple"
   tagRender={tagRender}
   defaultValue={tagInfo}
-  style={{ width: '100%' }}
+  style={{ width: '100%', marginBottom: '1rem' }}
   options={tagInfo}
   onChange={(newActiveTags) => {
     // TODO: debug
     console.log([...newActiveTags])
+    // this works...
+    // setActiveTags(['leadership'])
+    // this doesn't ...
     setActiveTags([...newActiveTags])
   }}
 />
