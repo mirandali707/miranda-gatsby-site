@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ConfigProvider, Card, Avatar, Tag, Tooltip, Button, Modal } from 'antd';
 import { mirandaConfig } from '../styles/mirandaConfig';
-import { GatsbyImage } from "gatsby-plugin-image"
+import { tagText, tagColors } from "./tagProperties"
 
 export const AccomplishmentCard = ({
     title, 
@@ -89,30 +89,6 @@ export const AccomplishmentCard = ({
 
         </ConfigProvider>
     )
-}
-
-enum tagColors {
-    'cs-ed' = 'cyan',
-    'art' = 'volcano',
-    'ai' = 'purple',
-    'code' = 'blue',
-    'pedagogy' = 'gold',
-    'design' = 'green',
-    'journo' = 'magenta',
-    'work' = 'lime',
-    'leadership' = 'orange'
-}
-
-enum tagText {
-    'cs-ed' = 'CS education (teaching coding)',
-    'art' = 'Art!',
-    'ai' = 'AI...',
-    'code' = 'I coded something',
-    'pedagogy' = 'I taught something or thought about teaching',
-    'design' = 'I designed something',
-    'journo' = 'Journalism :)',
-    'work' = 'Internship or job',
-    'leadership' = 'I lead a team',
 }
 
 const AccomplishmentTag = ({category}) => {

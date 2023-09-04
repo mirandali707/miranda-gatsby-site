@@ -2,7 +2,8 @@ import React from 'react';
 import { Space, Row, Col } from 'antd';
 import { AccomplishmentCard } from './AccomplishmentCard';
 import { accomplishments, AccomplishmentType } from '../data/accomplishments';
-
+import { TagFilterSelect
+ } from './TagFilterSelect';
 export const FilterableAccomplishments = () => {
     const columns : AccomplishmentType[][] = [[], [], []];  // 3 columns
 
@@ -15,6 +16,7 @@ export const FilterableAccomplishments = () => {
     return (
     <>
     <Row align="top" gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+        <TagFilterSelect/>
     {columns.map((column) => {
         return (
 
