@@ -24,7 +24,7 @@ export const accomplishments : AccomplishmentType[] = [
         description: "Code in Place is a free, human-centered offering of the first half of CS106A, Stanford's intro Python course, which has served around 30k students worldwide. Please 'See more', as I've done a lot of work for this course!",
         start: 'March 2020 → May 2020, March 2021',
         end: 'Present',
-        tags: ['cs-ed', 'code', 'pedagogy', 'design', 'work', 'leadership'],
+        tags: ['cs-ed', 'code', 'teaching', 'design', 'work', 'leadership'],
         avatar:<StaticImage
                     src="../images/cip-logo.png"
                     alt="Stanford logo"
@@ -39,7 +39,7 @@ export const accomplishments : AccomplishmentType[] = [
         description: "Designed lesson plans for game-based learning and professional development resources for public school teachers at Title 1 elementary schools in LA County, serving 300+ teachers at 24+ partner schools, reaching 8,000+ students. Developed teacher training curriculum to support teachers in teaching CS without prior CS experience.",
         start: 'June 2022',
         end: 'September 2023',
-        tags: ['cs-ed', 'pedagogy', 'design', 'work'],
+        tags: ['cs-ed', 'teaching', 'design', 'work'],
         avatar:<StaticImage
                     src="../images/9+Dots+logo+no+text.png"
                     alt="9 colorful dots"
@@ -53,7 +53,7 @@ export const accomplishments : AccomplishmentType[] = [
         description: "Led Stanford students in weekly discussion sections for Stanford’s Programming Methodologies course; worked closely with faculty to ensure course accessibility for visually impaired students; wrote a tool to support student learning of image processing techniques.",
         start: 'Winter 2020',
         end: 'Winter 2021',
-        tags: ['cs-ed', 'pedagogy', 'work'],
+        tags: ['cs-ed', 'teaching', 'work'],
         avatar:<StaticImage
                     src="../images/Block_S_2_color.png"
                     alt="Stanford S with tree"

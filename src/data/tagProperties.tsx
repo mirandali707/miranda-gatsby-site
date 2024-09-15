@@ -15,7 +15,7 @@ export const tagProperties = {
         color : 'blue',
         text: 'I coded something'
     },
-    'pedagogy' : {
+    'teaching' : {
         color: 'gold',
         text: 'I taught something or thought about teaching'
     },
