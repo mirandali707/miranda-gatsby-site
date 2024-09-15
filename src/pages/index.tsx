@@ -10,6 +10,7 @@ import Loading from '../components/Loading';
 
 const TagFilterSelect = lazy(() => import('../components/TagFilterSelect'));
 const FilterableAccomplishments = lazy(() => import('../components/FilterableAccomplishments'));
+const PublicationsList = lazy(() => import('../components/PublicationsList'));
 const AnyOrAllToggle = lazy(() => import('../components/AnyOrAllToggle'));
 
 const Home = () => {
@@ -23,39 +24,16 @@ const Home = () => {
       <Layout className="layout" style={{backgroundColor:'#FFFCFA'}}>
       <Content style={{width:'75%', margin: 'auto', paddingTop: '2rem'}}>
         <Suspense fallback={<Loading />}>
-          <Row gutter={24} justify="space-around" align="middle">
-              <Col span={16}>
-                  <Title>Hi, I'm Miranda ₊ ⊹ ⟡</Title>
-                  <Paragraph>
-                      I'm a student at Stanford studying computer science (B.S. '23, M.S. '24).
-                      I like making human-centered technology, joyful and accessible learning tools and curricula, and art.
-                  </Paragraph>
-                  <Paragraph>
-                  <Link href='https://www.linkedin.com/in/miranda-li-b83859124/'>Linkedin</Link>
-                  &nbsp;⟡&nbsp;
-                  <Link href='mailto:mirandal@stanford.edu'>Email</Link>
-                  &nbsp;⟡&nbsp;
-                  <Link href='https://github.com/mirandali707'>Github</Link>
-                  </Paragraph>
-              </Col>
-              <Col span={8}>
-                  <StaticImage
-                      src="../images/website-headshot.jpeg"
-                      alt="A photo of Miranda doing a peace sign"
-                      placeholder="blurred"
-                      layout="constrained"
-                      width={200}
-                      height={200}
-                      style={{borderRadius: '50%'}}
-                  />
-              </Col>
-          </Row>
+          <IntroHeader />
           <Divider dashed />
-          <Row gutter={8}>
-            <Col flex="auto"><TagFilterSelect setActiveTags={setActiveTags}/></Col>
-            <Col><AnyOrAllToggle anyOrAll={anyOrAll} setAnyOrAll={setAnyOrAll}/></Col>
-          </Row>
-          <Row><FilterableAccomplishments activeTags={activeTags} anyOrAll={anyOrAll}/></Row>
+          <Research />
+          <Divider dashed />
+          <Experience 
+            activeTags={activeTags}
+            anyOrAll={anyOrAll}
+            setActiveTags={setActiveTags}
+            setAnyOrAll={setAnyOrAll}
+          />
         </Suspense>
       </Content>
       <Footer style={{ textAlign: 'center', backgroundColor:"#FFFCFA" }}>
@@ -64,11 +42,68 @@ const Home = () => {
         <Link href='https://www.linkedin.com/in/miranda-li-b83859124/'>Linkedin</Link>
         &nbsp;⟡&nbsp;
         <Link href='mailto:mirandal@stanford.edu'>Email</Link>
-        </Footer>
+      </Footer>
     </Layout>
     </ConfigProvider>
     
   );
+}
+
+const IntroHeader = () => {
+  return (
+  <Row gutter={24} justify="space-around" align="middle">
+      <Col span={16}>
+          <Title>Hi, I'm Miranda ₊ ⊹ ⟡</Title>
+          <Paragraph>
+              I'm a student at Stanford studying computer science (B.S. '23, M.S. '24).
+              I like making human-centered technology, joyful and accessible learning tools and curricula, and art.
+          </Paragraph>
+          <Paragraph>
+          <Link href='https://www.linkedin.com/in/miranda-li-b83859124/'>Linkedin</Link>
+          &nbsp;⟡&nbsp;
+          <Link href='mailto:mirandal@stanford.edu'>Email</Link>
+          &nbsp;⟡&nbsp;
+          <Link href='https://github.com/mirandali707'>Github</Link>
+          </Paragraph>
+      </Col>
+      <Col span={8}>
+          <StaticImage
+              src="../images/website-headshot.jpeg"
+              alt="A photo of Miranda doing a peace sign"
+              placeholder="blurred"
+              layout="constrained"
+              width={200}
+              height={200}
+              style={{borderRadius: '50%'}}
+          />
+      </Col>
+  </Row>
+  )
+}
+
+const Research = () => {
+  return <>
+    <Title level={3}>Research</Title>
+    <Row>
+      <PublicationsList/>
+    </Row>
+  </>
+}
+
+const Experience = ({
+  activeTags,
+  anyOrAll,
+  setActiveTags,
+  setAnyOrAll
+}) => {
+  return <>
+    <Title level={3}>Experience</Title>
+    <Row gutter={8}>
+      <Col flex="auto"><TagFilterSelect setActiveTags={setActiveTags}/></Col>
+      <Col><AnyOrAllToggle anyOrAll={anyOrAll} setAnyOrAll={setAnyOrAll}/></Col>
+    </Row>
+    <Row><FilterableAccomplishments activeTags={activeTags} anyOrAll={anyOrAll}/></Row>
+  </>
 }
 
 export default Home 
