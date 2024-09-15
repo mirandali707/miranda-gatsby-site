@@ -20,6 +20,7 @@
     "antd": "^5.8.2",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
+    "gatsby-plugin-fix-fouc": "^1.0.5",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-mdx": "^5.11.0",

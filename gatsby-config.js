@@ -6,7 +6,7 @@ module.exports = {
     title: `miranda gatsby site`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", 
+  plugins: ["gatsby-plugin-image", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-fix-fouc",
   {
     resolve: 'gatsby-source-filesystem',
     options: {
