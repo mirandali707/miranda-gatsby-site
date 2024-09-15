@@ -3,7 +3,7 @@ import { Space, Row, Col } from 'antd';
 import { AccomplishmentCard } from './AccomplishmentCard';
 import { accomplishments, AccomplishmentType } from '../data/accomplishments';
 
-export const FilterableAccomplishments = ( { activeTags, anyOrAll }) => {
+const FilterableAccomplishments = ( { activeTags, anyOrAll }) => {
     const columns : AccomplishmentType[][] = [[], [], []];  // 3 columns
     const _ = require('lodash')
 
@@ -55,3 +55,5 @@ export const FilterableAccomplishments = ( { activeTags, anyOrAll }) => {
     </>      
     )
 }
+
+export default FilterableAccomplishments;

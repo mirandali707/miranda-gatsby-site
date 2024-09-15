@@ -1,7 +1,7 @@
 import React from 'react'
 import { Radio } from 'antd';
 
-export const AnyOrAllToggle = ({anyOrAll, setAnyOrAll}) => {
+const AnyOrAllToggle = ({anyOrAll, setAnyOrAll}) => {
     return <>
     <Radio.Group value={anyOrAll} onChange={(e) => setAnyOrAll(e.target.value)}>
       <Radio.Button value="any">any</Radio.Button>
@@ -9,3 +9,5 @@ export const AnyOrAllToggle = ({anyOrAll, setAnyOrAll}) => {
     </Radio.Group>
     </>
 }
+
+export default AnyOrAllToggle;

@@ -3,7 +3,7 @@ import { Select, Tag, Tooltip } from 'antd';
 import type { CustomTagProps } from 'rc-select/lib/BaseSelect';
 import { tagProperties } from '../data/tagProperties'
 
-export const TagFilterSelect = ({ setActiveTags }) => {    
+const TagFilterSelect = ({ setActiveTags }) => {    
   const tagInfo = Object.keys(tagProperties)
   .map((tag)=> {
       return {
@@ -45,3 +45,5 @@ const tagRender = (props: CustomTagProps) => {
     </Tooltip>
     );
   };
+
+export default TagFilterSelect;
