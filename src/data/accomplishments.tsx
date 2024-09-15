@@ -19,6 +19,20 @@ export type AccomplishmentType = {
 
 export const accomplishments : AccomplishmentType[] = [
     {
+        title: 'California Community Colleges x Stanford Digital Education',
+        role: 'Coordinator',
+        description: "Invited panelist at the 2024 California Community Colleges Futures Summit, to speak on the development of CS 49, a hybrid course for California Community College students which adapts the Code in Place curriculum. Coordinating between Stanford and CCC faculty, developing course materials, and managing student success. ",
+        start: 'March 2024',
+        end: 'Present',
+        tags: ['cs-ed', 'code', 'teaching', 'work', 'leadership'],
+        avatar:<StaticImage
+                    src="../images/cip-logo.png"
+                    alt="Stanford logo"
+                    placeholder="blurred"
+                    layout="constrained"
+                />,
+    },
+    {
         title: <a href="https://codeinplace.stanford.edu/">Code in Place</a>,
         role: 'Course Admin, Director of Head TAs, Developer... and more!',
         description: "Code in Place is a free, human-centered offering of the first half of CS106A, Stanford's intro Python course, which has served around 30k students worldwide. Please 'See more', as I've done a lot of work for this course!",
@@ -32,6 +46,20 @@ export const accomplishments : AccomplishmentType[] = [
                     layout="constrained"
                 />,
         moreInfo: <CIPContent/>
+    },
+    {
+        title: 'Stanford McCoy Center for Ethics in Society',
+        role: 'Research Assistant',
+        description: 'Designed curriculum for a new interdisciplinary Stanford course on critical making with AI entitled "AI and Art: Ethics and Aesthetics in the Making" under professors Shane Denson, Camille Utterback, and Miguel Novelo',
+        start: 'January 2024',
+        end: 'June 2024',
+        tags: ['teaching', 'work', 'art', 'ai'],
+        avatar:<StaticImage
+                    src="../images/cip-logo.png"
+                    alt="Stanford logo"
+                    placeholder="blurred"
+                    layout="constrained"
+                />,
     },
     {
         title: <a href='https://www.9dots.org/'>9 Dots</a>,

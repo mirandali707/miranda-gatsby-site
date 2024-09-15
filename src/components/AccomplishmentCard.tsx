@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Card, Avatar, Tag, Tooltip, Button, Modal } from 'antd';
 import {  tagProperties } from "../data/tagProperties"
 import { AccomplishmentType } from '../data/accomplishments';
+
+const StyledCard = styled(Card)`
+     .ant-card-meta-title {
+       white-space: pre-line;
+     }
+   `;
 
 export const AccomplishmentCard = ({ accomplishment } : { accomplishment: AccomplishmentType }) => {
     const { title, description, start, end, tags, role, image, avatar, moreInfo } = accomplishment
@@ -17,7 +24,7 @@ export const AccomplishmentCard = ({ accomplishment } : { accomplishment: Accomp
     )
 
     return (<>
-        <Card
+        <StyledCard
             hoverable
             style={{ width: '100%' }}
             cover={image ? image : <></>}
@@ -54,7 +61,7 @@ export const AccomplishmentCard = ({ accomplishment } : { accomplishment: Accomp
                 </Card.Grid>
              </>}
             
-        </Card>
+        </StyledCard>
         
         <Modal 
         open={modalOpen} 
