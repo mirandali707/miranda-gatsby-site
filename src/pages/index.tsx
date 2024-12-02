@@ -55,7 +55,7 @@ const IntroHeader = () => {
       <Col span={16}>
           <Title>Hi, I'm Miranda ₊ ⊹ ⟡</Title>
           <Paragraph>
-              I'm a student at Stanford studying computer science (B.S. '23, M.S. '24).
+              I'm a student at Stanford studying computer science (B.S. '23, M.S. '25).
               I like making human-centered technology, joyful and accessible learning tools and curricula, and art.
           </Paragraph>
           <Paragraph>
@@ -68,8 +68,8 @@ const IntroHeader = () => {
       </Col>
       <Col span={8}>
           <StaticImage
-              src="../images/website-headshot.jpeg"
-              alt="A photo of Miranda doing a peace sign"
+              src="../images/miranda-headshot.jpg"
+              alt="Headshot of Miranda Li."
               placeholder="blurred"
               layout="constrained"
               width={200}

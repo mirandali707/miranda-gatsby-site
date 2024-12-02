@@ -6,3 +6,7 @@ body,
     margin: 0;
     padding: 0;
 }
+
+.publications-list > *:not(:last-child) {
+    margin-bottom: 16px; /* Adjust the spacing as needed */
+}
