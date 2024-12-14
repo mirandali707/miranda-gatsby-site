@@ -12,7 +12,7 @@ const Artwork = ({ key, artwork } : { key: any, artwork: ArtworkType}) => {
         <StyledCard
             hoverable
             key={key}
-            style={{ width: 400 }}
+            style={{ width: 400, margin: 10 }}
             cover={image}
         >
         <Meta title={title} description={description ? description : ""} />
