@@ -56,10 +56,10 @@ const IntroHeader = () => {
           <Title>Hi, I'm Miranda ₊ ⊹ ⟡</Title>
           <Paragraph>
               I'm a student at Stanford studying computer science (B.S. '23, M.S. '25).
-              Through my <Typography.Link href="#research">research</Typography.Link> and <Typography.Link href="#experience">work</Typography.Link>, I aim to use technology to (A) facilitate positive human-to-human social outcomes to close the digital divide and to (B) promote human-machine collaboration to enhance accessibility and expertise for non-technical users and under-resourced populations. I am especially interested in education because it both exemplifies existing inequities in tech literacy and offers the potential to bridge them.
+              Through my <Link href="#research">research</Link> and <Link href="#experience">work</Link>, I aim to use technology to (A) facilitate positive human-to-human social outcomes to close the digital divide and to (B) promote human-machine collaboration to enhance accessibility and expertise for non-technical users and under-resourced populations. I am especially interested in education because it both exemplifies existing inequities in tech literacy and offers the potential to bridge them.
           </Paragraph>
           <Paragraph>
-              Also, <Typography.Link href="/art">my art practice</Typography.Link> is very important to me.
+              Also, <Link href="/art">my art practice</Link> is very important to me.
           </Paragraph>
           <Paragraph>
           <Link href='https://www.linkedin.com/in/miranda-li-b83859124/'>Linkedin</Link>

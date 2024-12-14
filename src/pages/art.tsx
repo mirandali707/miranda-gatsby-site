@@ -26,12 +26,12 @@ const Art = () => {
                 ]}
             />
           <Title>
-            Here is a peek into my art practice.
+            Here is a peek into my art practice!
           </Title>
             <p>
-                My art practice is central to who I am; I feel most fully myself when I am making art. I make art because I love to.
+                My art practice is central to who I am; I feel most fully myself when I am making art.
                 Practicing art allows me to learn about myself, the world around me, and how to exist as myself in such a world. 
-                My art reflects and informs my approach to many other things, like research and life in general—read my <Typography.Link href="#creative-process">musing on the universality of creative process</Typography.Link> below for more.
+                My art reflects and informs my approach to many other things, like research and life in general—read my <Typography.Link href="#creative-process">small ramble on the universality of creative process</Typography.Link> below for more.
             </p>
             <p>
                 Below are some of the things I've made.
