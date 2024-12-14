@@ -56,7 +56,10 @@ const IntroHeader = () => {
           <Title>Hi, I'm Miranda ₊ ⊹ ⟡</Title>
           <Paragraph>
               I'm a student at Stanford studying computer science (B.S. '23, M.S. '25).
-              I like making human-centered technology, joyful and accessible learning tools and curricula, and art.
+              Through my <Typography.Link href="#research">research</Typography.Link> and <Typography.Link href="#experience">work</Typography.Link>, I aim to use technology to (A) facilitate positive human-to-human social outcomes to close the digital divide and to (B) promote human-machine collaboration to enhance accessibility and expertise for non-technical users and under-resourced populations. I am especially interested in education because it both exemplifies existing inequities in tech literacy and offers the potential to bridge them.
+          </Paragraph>
+          <Paragraph>
+              Also, <Typography.Link href="/art">my art practice</Typography.Link> is very important to me.
           </Paragraph>
           <Paragraph>
           <Link href='https://www.linkedin.com/in/miranda-li-b83859124/'>Linkedin</Link>
@@ -83,7 +86,7 @@ const IntroHeader = () => {
 
 const Research = () => {
   return <>
-    <Title level={3}>Research</Title>
+    <Title id="research" level={3}>Research</Title>
     <Row>
       <PublicationsList/>
     </Row>
@@ -97,7 +100,7 @@ const Experience = ({
   setAnyOrAll
 }) => {
   return <>
-    <Title level={3}>Experience</Title>
+    <Title id="experience" level={3}>Experience</Title>
     <Row gutter={8}>
       <Col flex="auto"><TagFilterSelect setActiveTags={setActiveTags}/></Col>
       <Col><AnyOrAllToggle anyOrAll={anyOrAll} setAnyOrAll={setAnyOrAll}/></Col>

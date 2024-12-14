@@ -4,7 +4,7 @@ import { Card, Avatar, Tag, Tooltip, Button, Modal } from 'antd';
 import {  tagProperties } from "../data/tagProperties"
 import { AccomplishmentType } from '../data/accomplishments';
 
-const StyledCard = styled(Card)`
+export const StyledCard = styled(Card)`
      .ant-card-meta-title {
        white-space: pre-line;
      }
